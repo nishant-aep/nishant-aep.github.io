@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nishant Mayekar | Video Editor</title>
+<meta name="description" content="Nishant Mayekar is a video editor who makes aesthetic edits and movie edits, and a commerce student who wants to become a business accountant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15131f; --panel:#1e1b2e; --line:#322e49;
+  --text:#ede9f7; --muted:#a29db8; --rose:#f28fa8; --sky:#8fb8f2;
+  --head:'Syne',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+
+/* timeline progress bar: the one signature element */
+.tl{position:fixed;top:0;left:0;right:0;height:3px;background:var(--line);z-index:20}
+.tl i{display:block;height:100%;width:0;background:var(--rose)}
+.tc{position:fixed;top:14px;right:18px;z-index:20;font:500 .8rem/1 var(--body);font-variant-numeric:tabular-nums;color:var(--muted);background:rgba(21,19,31,.8);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+
+nav{position:fixed;top:14px;left:18px;z-index:20;display:flex;gap:6px;background:rgba(21,19,31,.8);border:1px solid var(--line);border-radius:999px;padding:6px;backdrop-filter:blur(8px)}
+nav a{text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
+nav a:hover{color:var(--text);background:var(--panel)}
+
+main{max-width:880px;margin:0 auto;padding:0 24px}
+section{padding:110px 0 40px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+h1{font:800 clamp(3rem,10vw,6.5rem)/.95 var(--head);letter-spacing:-.03em}
+h1 span{display:block;color:var(--rose)}
+.lead{max-width:34rem;margin-top:28px;color:var(--muted);font-size:1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:12px;border:1px solid var(--line);background:var(--panel);transition:transform .2s,border-color .2s,background .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--rose)}
+.btn.yt{background:var(--rose);color:#2a1020;border-color:var(--rose)}
+.btn.yt:hover{background:#f7a3b8}
+.btn.dc:hover{border-color:var(--sky)}
+.btn svg{width:22px;height:22px;flex:none}
+
+h2{font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:24px}
+p+p{margin-top:16px}
+.about p{max-width:40rem}
+
+.track{position:relative;margin-top:8px;padding-left:28px;border-left:2px solid var(--line)}
+.clip{position:relative;padding:0 0 34px}
+.clip::before{content:"";position:absolute;left:-36px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--rose)}
+.clip h3{font:700 1.25rem/1.2 var(--head)}
+.clip p{color:var(--muted);margin-top:6px;max-width:36rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{font:700 1.2rem/1.2 var(--head);margin-bottom:8px}
+.card p{color:var(--muted);font-size:.98rem}
+
+.contact{text-align:left}
+footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
+
+/* fade-in on scroll */
+.fade{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.fade.show{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade{opacity:1;transform:none;transition:none}
+  .btn,nav a{transition:none}
+}
+@media (max-width:560px){
+  nav a:nth-child(n+4){display:none}
+  .tc{display:none}
+}
+</style>
+</head>
+<body>
+<div class="tl" aria-hidden="true"><i id="bar"></i></div>
+<div class="tc" id="tc" aria-hidden="true">00:00:00:00</div>
+
+<nav aria-label="Main">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">My edits</a><a href="#connect">Connect</a>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <h1 class="fade">Nishant<span>Mayekar</span></h1>
+    <p class="lead fade d1">I'm a video editor who makes aesthetic edits and movie edits. I'm also a commerce student who wants to become a business accountant.</p>
+    <div class="btns fade d2">
+      <a class="btn yt" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>
+        Watch on YouTube
+      </a>
+      <a class="btn dc" id="discord" href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#8fb8f2" aria-hidden="true"><path d="M20.300 4.400A19.800 19.800 0 0 0 15.400 2.900l-.2.500a18.300 18.300 0 0 0-6.400 0l-.2-.5A19.700 19.700 0 0 0 3.700 4.400C.6 9 -.2 13.500.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100a12.900 12.900 0 0 1-2-1l.5-.4a14.200 14.200 0 0 0 12.200 0l.5.4c-.6.400-1.300.700-2 1l1.300 2.100a19.800 19.800 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400z"/></svg>
+        Find me on Discord
+      </a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 class="fade">About me</h2>
+    <p class="fade d1">Hi, I'm Nishant Mayekar, a video editor and a 12th-grade student. Editing started as a hobby, and it's now the thing I want to keep building on, because it clears my mind and lets me make something I'm proud of.</p>
+    <p class="fade d2">I'm studying commerce because I want to become a business accountant. Editing and accounting look very different, but both reward patience, attention to detail, and care for the small things nobody notices at first.</p>
+    <p class="fade d3">Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or say hi on Discord.</p>
+  </section>
+
+  <section id="journey">
+    <h2 class="fade">My editing journey</h2>
+    <div class="track">
+      <div class="clip fade"><h3>Alight Motion</h3><p>This is where I started. I learned the basics of keyframes, timing, and transitions on my phone.</p></div>
+      <div class="clip fade d1"><h3>Preset era</h3><p>I was a presetmaxxer for a while. It taught me what looks good, and later it pushed me to build my own style.</p></div>
+      <div class="clip fade d2"><h3>After Effects</h3><p>I moved to After Effects and now edit on my own Acer Nitro V16S laptop, which gives me the power for heavier projects.</p></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2 class="fade">What I make</h2>
+    <div class="grid">
+      <div class="card fade"><h3>Aesthetic edits</h3><p>Soft colors, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
+      <div class="card fade d1"><h3>Movie edits</h3><p>Scenes and characters I love, cut to rhythm so the best moments hit harder.</p></div>
+      <div class="card fade d2"><h3>My setup</h3><p>Adobe After Effects on an Acer Nitro V16S. It's all my own gear.</p></div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <h2 class="fade">Beyond editing</h2>
+    <p class="fade d1" style="max-width:40rem">My goal is to become a business accountant. I'm pursuing commerce to get there, and I plan to keep editing alongside it.</p>
+  </section>
+
+  <section class="contact" id="connect">
+    <h2 class="fade">Let's connect</h2>
+    <div class="btns fade d1">
+      <a class="btn yt" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>
+        YouTube
+      </a>
+      <a class="btn dc" id="discord2" href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#8fb8f2" aria-hidden="true"><path d="M20.300 4.400A19.800 19.800 0 0 0 15.400 2.900l-.2.500a18.300 18.300 0 0 0-6.400 0l-.2-.5A19.700 19.700 0 0 0 3.700 4.400C.6 9 -.2 13.500.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100a12.900 12.900 0 0 1-2-1l.5-.4a14.200 14.200 0 0 0 12.200 0l.5.4c-.6.400-1.300.700-2 1l1.300 2.100a19.800 19.800 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400z"/></svg>
+        Discord
+      </a>
+    </div>
+  </section>
+
+  <footer>&copy; <span id="yr"></span> Nishant Mayekar. Thanks for visiting.</footer>
+</main>
+
+<script>
+// fade-in on scroll
+var els=document.querySelectorAll('.fade');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})
+  },{threshold:.15});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('show')})}
+
+// scroll-linked timeline bar and timecode
+var bar=document.getElementById('bar'),tc=document.getElementById('tc');
+function p(n){return String(n).padStart(2,'0')}
+function upd(){
+  var h=document.documentElement,max=h.scrollHeight-h.clientHeight,r=max>0?h.scrollTop/max:0;
+  bar.style.width=(r*100)+'%';
+  var f=Math.round(r*90*24),s=Math.floor(f/24);
+  tc.textContent='00:'+p(Math.floor(s/60))+':'+p(s%60)+':'+p(f%24);
+}
+addEventListener('scroll',upd,{passive:true});upd();
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

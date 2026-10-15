@@ -10,59 +10,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --text:#f1eef8; --muted:#b3aec6;
-  --glass:rgba(255,255,255,.075); --glass-b:rgba(255,255,255,.16);
-  --rose:#e9b3c4; --sky:#b4c8ee;
+  --text:#fff; --muted:#a6a6a6;
+  --glass:rgba(255,255,255,.06); --glass-b:rgba(255,255,255,.17);
+  --glow:0 0 40px rgba(255,255,255,.07);
   --head:'Syne',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;background:#1a1828}
+html{scroll-behavior:smooth;background:#050505}
 body{color:var(--text);font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;
   background:
-   radial-gradient(60vw 50vh at 12% 8%,rgba(180,200,238,.22),transparent 70%),
-   radial-gradient(55vw 55vh at 90% 30%,rgba(233,179,196,.18),transparent 70%),
-   radial-gradient(60vw 50vh at 30% 95%,rgba(150,130,210,.2),transparent 70%),
-   #1a1828;
+   radial-gradient(55vw 45vh at 15% 6%,rgba(255,255,255,.09),transparent 70%),
+   radial-gradient(50vw 50vh at 92% 40%,rgba(255,255,255,.06),transparent 70%),
+   radial-gradient(60vw 45vh at 30% 98%,rgba(255,255,255,.08),transparent 70%),
+   #050505;
   background-attachment:fixed}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:10px}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:10px}
 
 .glass{background:var(--glass);border:1px solid var(--glass-b);
-  -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 30px rgba(8,6,20,.25)}
+  -webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),var(--glow),0 12px 34px rgba(0,0,0,.5)}
+
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:80}
 
 .tl{position:fixed;top:0;left:0;right:0;height:3px;z-index:30}
-.tl i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sky),var(--rose))}
+.tl i{display:block;height:100%;width:0;background:#fff;box-shadow:0 0 12px rgba(255,255,255,.7)}
 
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:2px;border-radius:999px;padding:5px;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav a{white-space:nowrap;text-decoration:none;font-size:.85rem;padding:7px 13px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
-nav a:hover{color:var(--text);background:rgba(255,255,255,.12)}
+nav a{white-space:nowrap;text-decoration:none;font-size:.85rem;padding:7px 13px;border-radius:999px;color:var(--muted);transition:color .25s,background .25s}
+nav a:hover{color:#fff;background:rgba(255,255,255,.12)}
 nav a.sp{display:inline-flex;align-items:center;gap:6px}
 nav a.sp svg{width:15px;height:15px}
 
 main{max-width:880px;margin:0 auto;padding:0 22px}
 section{padding:100px 0 30px}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px}
-h1{font:800 clamp(3rem,10vw,6.5rem)/.95 var(--head);letter-spacing:-.03em}
-h1 span{display:block;color:var(--rose)}
+h1{font:800 clamp(3rem,10vw,6.5rem)/.95 var(--head);letter-spacing:-.03em;text-shadow:0 0 44px rgba(255,255,255,.22)}
+h1 span{display:block;color:#bdbdbd}
 .lead{max-width:34rem;margin-top:26px;color:var(--muted);font-size:1.2rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1rem var(--body);color:var(--text);padding:12px 20px;border-radius:16px;cursor:pointer;
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1rem var(--body);color:#fff;padding:12px 20px;border-radius:16px;cursor:pointer;
   background:var(--glass);border:1px solid var(--glass-b);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transition:transform .25s,background .25s}
-.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:transform .3s,background .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 26px rgba(255,255,255,.2)}
 .btn svg{width:22px;height:22px;flex:none}
 
 h2{font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:22px}
 p+p{margin-top:16px}
-.about{max-width:42rem;padding:34px;margin-top:0}
-.about p{color:#e0dcee}
 .panel{border-radius:26px}
+.about{max-width:42rem;padding:34px}
+.about p{color:#dcdcdc}
 
-.track{position:relative;padding-left:28px;border-left:2px solid rgba(255,255,255,.14);margin-left:6px}
+.track{position:relative;padding-left:28px;border-left:2px solid rgba(255,255,255,.18);margin-left:6px}
 .clip{position:relative;padding:0 0 30px}
-.clip::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:#1a1828;border:2px solid var(--rose)}
+.clip::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:#050505;border:2px solid #fff;box-shadow:0 0 12px rgba(255,255,255,.6)}
 .clip h3{font:700 1.25rem/1.2 var(--head)}
 .clip p{color:var(--muted);margin-top:6px;max-width:36rem}
 
@@ -71,32 +73,67 @@ p+p{margin-top:16px}
 .card h3{font:700 1.2rem/1.2 var(--head);margin-bottom:8px}
 .card p{color:var(--muted);font-size:.98rem}
 
-.music{border-radius:26px;padding:24px}
-.music p{color:var(--muted);margin-bottom:16px;max-width:36rem}
-.music iframe{display:block;width:100%;height:152px;border:0;border-radius:14px}
+.music{border-radius:26px;padding:26px}
+.music p{color:var(--muted);max-width:36rem}
 .music .btns{margin-top:18px}
 
 footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
 
-.fade{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.fade.show{opacity:1;transform:none}
-.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+/* fade in and out on scroll */
+.fade{opacity:0;transform:translateY(28px);filter:blur(6px);
+  transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s cubic-bezier(.2,.7,.2,1)}
+.fade.show{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* opening screen */
+.splash{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px;text-align:center;
+  background:radial-gradient(70vw 60vh at 50% 50%,rgba(255,255,255,.1),transparent 70%),#030303;
+  transition:opacity .9s ease,visibility .9s}
+.splash.gone{opacity:0;visibility:hidden}
+.splash .box{position:relative;max-width:560px;padding:46px 34px;border-radius:28px;animation:pulse 4s ease-in-out infinite}
+.splash .box::before,.splash .box::after{content:"";position:absolute;width:26px;height:26px;border:2px solid #fff;opacity:.85}
+.splash .box::before{top:-9px;left:-9px;border-right:0;border-bottom:0;border-top-left-radius:10px}
+.splash .box::after{bottom:-9px;right:-9px;border-left:0;border-top:0;border-bottom-right-radius:10px}
+.splash h2{font:800 clamp(2.2rem,8vw,3.6rem)/1 var(--head);letter-spacing:-.03em;text-shadow:0 0 30px rgba(255,255,255,.5);margin-bottom:16px;animation:flicker 5s linear infinite}
+.splash p{color:var(--muted);font-size:1rem;margin:0 auto 28px;max-width:26rem}
+.splash .btn{justify-content:center;font-size:1.05rem;padding:14px 32px}
+@keyframes pulse{50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 0 70px rgba(255,255,255,.14),0 12px 34px rgba(0,0,0,.5)}}
+@keyframes flicker{0%,92%,96%,100%{opacity:1}93%{opacity:.55}94%{opacity:1}95%{opacity:.7}}
+body.locked{overflow:hidden}
+
+#player{position:fixed;right:12px;bottom:12px;z-index:25;width:min(380px,calc(100vw - 24px));border-radius:18px;overflow:hidden;
+  opacity:0;transform:translateY(14px);transition:opacity .9s .5s,transform .9s .5s}
+body.entered #player{opacity:1;transform:none}
+#player iframe{display:block;border:0;border-radius:18px}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .fade{opacity:1;transform:none;transition:none}
+  .fade{opacity:1;transform:none;filter:none;transition:none}
+  .splash .box,.splash h2{animation:none}
   .btn,nav a{transition:none}
 }
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  .glass,.btn{background:rgba(40,36,62,.9)}
+  .glass,.btn{background:rgba(24,24,24,.92)}
 }
 </style>
 </head>
-<body>
+<body class="locked">
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<div class="splash" id="splash" role="dialog" aria-label="Enter Nishant Mayekar's site">
+  <div class="box glass">
+    <h2>Enter at your own risk</h2>
+    <p>Sound on. Headphones recommended. Side effects include smooth transitions and a sudden urge to start editing.</p>
+    <button class="btn" id="enter" type="button">I accept the risk</button>
+  </div>
+</div>
+<div id="player" class="glass"><div id="embed"></div></div>
+
 <div class="tl" aria-hidden="true"><i id="bar"></i></div>
 
 <nav class="glass" aria-label="Main">
   <a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">Edits</a>
-  <a class="sp" href="#music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a><a href="#connect">Connect</a>
+  <a class="sp" href="#music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a><a href="#connect">Connect</a>
 </nav>
 
 <main>
@@ -105,8 +142,8 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
     <p class="lead fade d1">I'm a video editor who makes aesthetic edits and movie edits. I'm also a commerce student who wants to become a business accountant.</p>
     <div class="btns fade d2">
       <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
-      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#b4c8ee" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
-      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
+      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
+      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
     </div>
   </section>
 
@@ -131,7 +168,7 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   <section id="work">
     <h2 class="fade">What I make</h2>
     <div class="grid">
-      <div class="card glass fade"><h3>Aesthetic edits</h3><p>Soft colors, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
+      <div class="card glass fade"><h3>Aesthetic edits</h3><p>Soft light, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
       <div class="card glass fade d1"><h3>Movie edits</h3><p>Scenes and characters I love, cut to rhythm so the best moments hit harder.</p></div>
       <div class="card glass fade d2"><h3>My setup</h3><p>Adobe After Effects on an Acer Nitro V16S. It's all my own gear.</p></div>
     </div>
@@ -140,23 +177,22 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   <section id="music">
     <h2 class="fade">What I'm listening to</h2>
     <div class="music glass fade d1">
-      <p>Say My Name (8D audio) is on repeat. Use headphones for the full effect.</p>
-      <iframe title="Say My Name (8D audio) on Spotify" src="https://open.spotify.com/embed/track/1tXRRjP6bGojznuShG6VD9" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <div class="btns"><a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>See my Spotify profile</a></div>
+      <p>Around the World (La La La La La) is on repeat. The player in the corner controls it, so you can pause or skip anytime.</p>
+      <div class="btns"><a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>See my Spotify profile</a></div>
     </div>
   </section>
 
   <section id="plans">
     <h2 class="fade">Beyond editing</h2>
-    <p class="fade d1" style="max-width:40rem;color:#e0dcee">My goal is to become a business accountant. I'm pursuing commerce to get there, and I plan to keep editing alongside it.</p>
+    <p class="fade d1" style="max-width:40rem;color:#dcdcdc">My goal is to become a business accountant. I'm pursuing commerce to get there, and I plan to keep editing alongside it.</p>
   </section>
 
   <section id="connect">
     <h2 class="fade">Let's connect</h2>
     <div class="btns fade d1">
       <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
-      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#b4c8ee" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
-      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
+      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
+      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
       <button class="btn" id="copy" type="button" title="Copy my Discord username"><span id="copylbl">Copy Discord username</span></button>
     </div>
   </section>
@@ -165,17 +201,61 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
 </main>
 
 <script>
-var els=document.querySelectorAll('.fade');
+// fade in AND out: elements toggle as they enter and leave the screen
+var els=document.querySelectorAll('.fade'),heroEls=[],io=null;
 if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})
-  },{threshold:.15});
-  els.forEach(function(el){io.observe(el)});
+  io=new IntersectionObserver(function(es){
+    es.forEach(function(e){e.target.classList.toggle('show',e.isIntersecting)})
+  },{threshold:.12,rootMargin:'-6% 0px -6% 0px'});
+  els.forEach(function(el){if(el.closest('.hero')){heroEls.push(el)}else{io.observe(el)}});
 }else{els.forEach(function(el){el.classList.add('show')})}
 
 var bar=document.getElementById('bar');
 function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%'}
 addEventListener('scroll',upd,{passive:true});upd();
+
+// opening screen: the tap is what lets browsers play audio
+var ctrl=null,pending=false,started=false,fixed=false,URI='spotify:track:0764xqkow5umcc1HyNiJ5a';
+function startSong(c){started=true;c.loadUri(URI,false,0);setTimeout(function(){c.play()},350)}
+function enter(){
+  document.body.classList.remove('locked');document.body.classList.add('entered');
+  document.getElementById('splash').classList.add('gone');
+  if(ctrl){startSong(ctrl)}else{pending=true}
+  setTimeout(function(){heroEls.forEach(function(el){if(io){io.observe(el)}})},600);
+}
+document.getElementById('enter').addEventListener('click',enter);
+window.onSpotifyIframeApiReady=function(api){
+  api.createController(document.getElementById('embed'),{uri:'spotify:track:0764xqkow5umcc1HyNiJ5a',width:'100%',height:80},function(c){
+    ctrl=c;
+    c.addListener('playback_update',function(e){
+      var d=e.data;
+      if(started&&!fixed&&!d.isPaused&&!d.isBuffering){fixed=true;if(d.position>1500){c.seek(0)}}
+    });
+    if(pending){startSong(c)}
+  });
+};
+
+// slow, soft snow
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var cv=document.getElementById('snow'),cx=cv.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2),fl=[];
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
+  function mk(top){return{x:Math.random()*W,y:top?-10:Math.random()*H,r:.8+Math.random()*2.6,v:.2+Math.random()*.55,s:Math.random()*6.28,w:.3+Math.random()*.8,a:.3+Math.random()*.5}}
+  size();addEventListener('resize',size);
+  var n=Math.round(Math.min(110,Math.max(45,W/14)));
+  for(var i=0;i<n;i++)fl.push(mk(false));
+  function draw(){
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<fl.length;i++){
+      var f=fl[i];f.y+=f.v;f.s+=.006;f.x+=Math.sin(f.s)*f.w*.35;
+      if(f.y>H+10||f.x<-20||f.x>W+20)fl[i]=f=mk(true);
+      cx.beginPath();cx.fillStyle='rgba(255,255,255,'+(f.a*.18)+')';cx.arc(f.x,f.y,f.r*2.6,0,6.283);cx.fill();
+      cx.beginPath();cx.fillStyle='rgba(255,255,255,'+f.a+')';cx.arc(f.x,f.y,f.r,0,6.283);cx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 
 var lbl=document.getElementById('copylbl');
 document.getElementById('copy').addEventListener('click',function(){
@@ -184,5 +264,6 @@ document.getElementById('copy').addEventListener('click',function(){
 });
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 </body>
 </html>

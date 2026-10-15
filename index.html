@@ -10,58 +10,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#15131f; --panel:#1e1b2e; --line:#322e49;
-  --text:#ede9f7; --muted:#a29db8; --rose:#f28fa8; --sky:#8fb8f2;
+  --text:#f1eef8; --muted:#b3aec6;
+  --glass:rgba(255,255,255,.075); --glass-b:rgba(255,255,255,.16);
+  --rose:#e9b3c4; --sky:#b4c8ee;
   --head:'Syne',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--text);font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:#1a1828}
+body{color:var(--text);font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;
+  background:
+   radial-gradient(60vw 50vh at 12% 8%,rgba(180,200,238,.22),transparent 70%),
+   radial-gradient(55vw 55vh at 90% 30%,rgba(233,179,196,.18),transparent 70%),
+   radial-gradient(60vw 50vh at 30% 95%,rgba(150,130,210,.2),transparent 70%),
+   #1a1828;
+  background-attachment:fixed}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:10px}
 
-/* timeline progress bar: the one signature element */
-.tl{position:fixed;top:0;left:0;right:0;height:3px;background:var(--line);z-index:20}
-.tl i{display:block;height:100%;width:0;background:var(--rose)}
-.tc{position:fixed;top:14px;right:18px;z-index:20;font:500 .8rem/1 var(--body);font-variant-numeric:tabular-nums;color:var(--muted);background:rgba(21,19,31,.8);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+.glass{background:var(--glass);border:1px solid var(--glass-b);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 30px rgba(8,6,20,.25)}
 
-nav{position:fixed;top:14px;left:18px;z-index:20;display:flex;gap:6px;background:rgba(21,19,31,.8);border:1px solid var(--line);border-radius:999px;padding:6px;backdrop-filter:blur(8px)}
-nav a{text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
-nav a:hover{color:var(--text);background:var(--panel)}
+.tl{position:fixed;top:0;left:0;right:0;height:3px;z-index:30}
+.tl i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sky),var(--rose))}
 
-main{max-width:880px;margin:0 auto;padding:0 24px}
-section{padding:110px 0 40px}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:2px;border-radius:999px;padding:5px;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;text-decoration:none;font-size:.85rem;padding:7px 13px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
+nav a:hover{color:var(--text);background:rgba(255,255,255,.12)}
+nav a.sp{display:inline-flex;align-items:center;gap:6px}
+nav a.sp svg{width:15px;height:15px}
+
+main{max-width:880px;margin:0 auto;padding:0 22px}
+section{padding:100px 0 30px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px}
 h1{font:800 clamp(3rem,10vw,6.5rem)/.95 var(--head);letter-spacing:-.03em}
 h1 span{display:block;color:var(--rose)}
-.lead{max-width:34rem;margin-top:28px;color:var(--muted);font-size:1.2rem}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:12px;border:1px solid var(--line);background:var(--panel);transition:transform .2s,border-color .2s,background .2s}
-.btn:hover{transform:translateY(-2px);border-color:var(--rose)}
-.btn.yt{background:var(--rose);color:#2a1020;border-color:var(--rose)}
-.btn.yt:hover{background:#f7a3b8}
-.btn.dc:hover{border-color:var(--sky)}
+.lead{max-width:34rem;margin-top:26px;color:var(--muted);font-size:1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1rem var(--body);color:var(--text);padding:12px 20px;border-radius:16px;cursor:pointer;
+  background:var(--glass);border:1px solid var(--glass-b);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transition:transform .25s,background .25s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
 .btn svg{width:22px;height:22px;flex:none}
 
-h2{font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:24px}
+h2{font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:22px}
 p+p{margin-top:16px}
-.about p{max-width:40rem}
+.about{max-width:42rem;padding:34px;margin-top:0}
+.about p{color:#e0dcee}
+.panel{border-radius:26px}
 
-.track{position:relative;margin-top:8px;padding-left:28px;border-left:2px solid var(--line)}
-.clip{position:relative;padding:0 0 34px}
-.clip::before{content:"";position:absolute;left:-36px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid var(--rose)}
+.track{position:relative;padding-left:28px;border-left:2px solid rgba(255,255,255,.14);margin-left:6px}
+.clip{position:relative;padding:0 0 30px}
+.clip::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:#1a1828;border:2px solid var(--rose)}
 .clip h3{font:700 1.25rem/1.2 var(--head)}
 .clip p{color:var(--muted);margin-top:6px;max-width:36rem}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border-radius:22px;padding:26px}
 .card h3{font:700 1.2rem/1.2 var(--head);margin-bottom:8px}
 .card p{color:var(--muted);font-size:.98rem}
 
-.contact{text-align:left}
-footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
+.music{border-radius:26px;padding:24px}
+.music p{color:var(--muted);margin-bottom:16px;max-width:36rem}
+.music iframe{display:block;width:100%;height:152px;border:0;border-radius:14px}
+.music .btns{margin-top:18px}
 
-/* fade-in on scroll */
+footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
+
 .fade{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .fade.show{opacity:1;transform:none}
 .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
@@ -70,18 +86,17 @@ footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
   .fade{opacity:1;transform:none;transition:none}
   .btn,nav a{transition:none}
 }
-@media (max-width:560px){
-  nav a:nth-child(n+4){display:none}
-  .tc{display:none}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .glass,.btn{background:rgba(40,36,62,.9)}
 }
 </style>
 </head>
 <body>
 <div class="tl" aria-hidden="true"><i id="bar"></i></div>
-<div class="tc" id="tc" aria-hidden="true">00:00:00:00</div>
 
-<nav aria-label="Main">
-  <a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">My edits</a><a href="#connect">Connect</a>
+<nav class="glass" aria-label="Main">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">Edits</a>
+  <a class="sp" href="#music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a><a href="#connect">Connect</a>
 </nav>
 
 <main>
@@ -89,22 +104,19 @@ footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
     <h1 class="fade">Nishant<span>Mayekar</span></h1>
     <p class="lead fade d1">I'm a video editor who makes aesthetic edits and movie edits. I'm also a commerce student who wants to become a business accountant.</p>
     <div class="btns fade d2">
-      <a class="btn yt" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>
-        Watch on YouTube
-      </a>
-      <a class="btn dc" id="discord" href="#" data-copy="uncle_1412" title="Click to copy my Discord username">
-        <svg viewBox="0 0 24 24" fill="#8fb8f2" aria-hidden="true"><path d="M20.300 4.400A19.800 19.800 0 0 0 15.400 2.900l-.2.500a18.300 18.300 0 0 0-6.400 0l-.2-.5A19.700 19.700 0 0 0 3.700 4.400C.6 9 -.2 13.500.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100a12.900 12.900 0 0 1-2-1l.5-.4a14.200 14.200 0 0 0 12.200 0l.5.4c-.6.400-1.300.700-2 1l1.300 2.100a19.800 19.800 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400z"/></svg>
-        <span class="lbl">Discord: uncle_1412</span>
-      </a>
+      <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
+      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#b4c8ee" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
+      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
     </div>
   </section>
 
-  <section class="about" id="about">
+  <section id="about">
     <h2 class="fade">About me</h2>
-    <p class="fade d1">Hi, I'm Nishant Mayekar, a video editor and a 12th-grade student. Editing started as a hobby, and it's now the thing I want to keep building on, because it clears my mind and lets me make something I'm proud of.</p>
-    <p class="fade d2">I'm studying commerce because I want to become a business accountant. Editing and accounting look very different, but both reward patience, attention to detail, and care for the small things nobody notices at first.</p>
-    <p class="fade d3">Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or say hi on Discord.</p>
+    <div class="about glass panel fade d1">
+      <p>Hi, I'm Nishant Mayekar, a video editor and a 12th-grade student. Editing started as a hobby, and it's now the thing I want to keep building on, because it clears my mind and lets me make something I'm proud of.</p>
+      <p>I'm studying commerce because I want to become a business accountant. Editing and accounting look very different, but both reward patience, attention to detail, and care for the small things nobody notices at first.</p>
+      <p>Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or say hi on Discord.</p>
+    </div>
   </section>
 
   <section id="journey">
@@ -119,28 +131,33 @@ footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
   <section id="work">
     <h2 class="fade">What I make</h2>
     <div class="grid">
-      <div class="card fade"><h3>Aesthetic edits</h3><p>Soft colors, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
-      <div class="card fade d1"><h3>Movie edits</h3><p>Scenes and characters I love, cut to rhythm so the best moments hit harder.</p></div>
-      <div class="card fade d2"><h3>My setup</h3><p>Adobe After Effects on an Acer Nitro V16S. It's all my own gear.</p></div>
+      <div class="card glass fade"><h3>Aesthetic edits</h3><p>Soft colors, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
+      <div class="card glass fade d1"><h3>Movie edits</h3><p>Scenes and characters I love, cut to rhythm so the best moments hit harder.</p></div>
+      <div class="card glass fade d2"><h3>My setup</h3><p>Adobe After Effects on an Acer Nitro V16S. It's all my own gear.</p></div>
+    </div>
+  </section>
+
+  <section id="music">
+    <h2 class="fade">What I'm listening to</h2>
+    <div class="music glass fade d1">
+      <p>Say My Name (8D audio) is on repeat. Use headphones for the full effect.</p>
+      <iframe title="Say My Name (8D audio) on Spotify" src="https://open.spotify.com/embed/track/1tXRRjP6bGojznuShG6VD9" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="btns"><a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>See my Spotify profile</a></div>
     </div>
   </section>
 
   <section id="plans">
     <h2 class="fade">Beyond editing</h2>
-    <p class="fade d1" style="max-width:40rem">My goal is to become a business accountant. I'm pursuing commerce to get there, and I plan to keep editing alongside it.</p>
+    <p class="fade d1" style="max-width:40rem;color:#e0dcee">My goal is to become a business accountant. I'm pursuing commerce to get there, and I plan to keep editing alongside it.</p>
   </section>
 
-  <section class="contact" id="connect">
+  <section id="connect">
     <h2 class="fade">Let's connect</h2>
     <div class="btns fade d1">
-      <a class="btn yt" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>
-        YouTube
-      </a>
-      <a class="btn dc" id="discord2" href="#" data-copy="uncle_1412" title="Click to copy my Discord username">
-        <svg viewBox="0 0 24 24" fill="#8fb8f2" aria-hidden="true"><path d="M20.300 4.400A19.800 19.800 0 0 0 15.400 2.900l-.2.500a18.300 18.300 0 0 0-6.400 0l-.2-.5A19.700 19.700 0 0 0 3.700 4.400C.6 9 -.2 13.500.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100a12.900 12.900 0 0 1-2-1l.5-.4a14.200 14.200 0 0 0 12.200 0l.5.4c-.6.400-1.300.700-2 1l1.300 2.100a19.800 19.800 0 0 0 6-3c.5-5.200-.8-9.700-3.700-13.600zM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400z"/></svg>
-        <span class="lbl">Discord: uncle_1412</span>
-      </a>
+      <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
+      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#b4c8ee" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
+      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ed760"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#10201a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a>
+      <button class="btn" id="copy" type="button" title="Copy my Discord username"><span id="copylbl">Copy Discord username</span></button>
     </div>
   </section>
 
@@ -148,7 +165,6 @@ footer{padding:80px 0 60px;color:var(--muted);font-size:.9rem}
 </main>
 
 <script>
-// fade-in on scroll
 var els=document.querySelectorAll('.fade');
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){
@@ -157,28 +173,16 @@ if('IntersectionObserver' in window){
   els.forEach(function(el){io.observe(el)});
 }else{els.forEach(function(el){el.classList.add('show')})}
 
-// scroll-linked timeline bar and timecode
-var bar=document.getElementById('bar'),tc=document.getElementById('tc');
-function p(n){return String(n).padStart(2,'0')}
-function upd(){
-  var h=document.documentElement,max=h.scrollHeight-h.clientHeight,r=max>0?h.scrollTop/max:0;
-  bar.style.width=(r*100)+'%';
-  var f=Math.round(r*90*24),s=Math.floor(f/24);
-  tc.textContent='00:'+p(Math.floor(s/60))+':'+p(s%60)+':'+p(f%24);
-}
+var bar=document.getElementById('bar');
+function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%'}
 addEventListener('scroll',upd,{passive:true});upd();
-document.getElementById('yr').textContent=new Date().getFullYear();
 
-// Discord: copy username on click
-document.querySelectorAll('[data-copy]').forEach(function(a){
-  var l=a.querySelector('.lbl'),orig=l.textContent;
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var t=a.getAttribute('data-copy');
-    function done(){l.textContent='Copied! Add me: '+t;setTimeout(function(){l.textContent=orig},2200)}
-    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,done)}else{done()}
-  });
+var lbl=document.getElementById('copylbl');
+document.getElementById('copy').addEventListener('click',function(){
+  function done(){lbl.textContent='Copied: uncle_1412';setTimeout(function(){lbl.textContent='Copy Discord username'},2200)}
+  if(navigator.clipboard){navigator.clipboard.writeText('uncle_1412').then(done,done)}else{done()}
 });
+document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>

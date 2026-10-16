@@ -186,6 +186,9 @@ section{position:relative}
 .tw{position:relative}
 .tw::before{content:"";position:absolute;left:14px;right:14px;top:12px;bottom:-12px;border-radius:26px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);z-index:-1}
 @media (max-width:700px){.ghost{font-size:17vw;left:0}.ghost.r{left:auto;right:0}.dc1{width:130px;height:130px}.dc2{width:80px;height:80px}.dc3{width:180px;height:180px}.tw::before{left:10px;right:10px}}
+
+/* opening screen: just one line */
+.splash .hint{margin:0;max-width:none;color:#fff;font-weight:600;font-size:clamp(1.1rem,4.2vw,1.5rem);letter-spacing:.06em;text-shadow:0 0 24px rgba(255,255,255,.5)}
 </style>
 </head>
 <body class="locked">
@@ -193,12 +196,8 @@ section{position:relative}
 <div id="glow" aria-hidden="true"></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
-<div class="splash" id="splash" role="button" tabindex="0" aria-label="Tap anywhere to enter Nishant.aep's site">
-  <div class="box glass">
-    <h2>Enter at your own risk</h2>
-    <p>Sound on, headphones recommended. Side effects include smooth transitions and a sudden urge to start editing.</p>
-    <p class="hint">Tap anywhere to enter</p>
-  </div>
+<div class="splash" id="splash" role="button" tabindex="0" aria-label="Click anywhere to view user's profile">
+  <p class="hint">Click anywhere to view user's profile</p>
 </div>
 
 <button class="ib glass" id="snd" type="button" aria-label="Pause or play music"><svg class="ic1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="ic2" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
@@ -206,7 +205,7 @@ section{position:relative}
 <div class="tl" aria-hidden="true"><i id="bar"></i></div>
 <nav class="glass" aria-label="Main">
   <a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">Edits</a><a href="#listen">Listen</a>
-  <a href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify</a><a href="#connect">Connect</a>
+  <a href="#connect">Connect</a>
 </nav>
 
 <main>
@@ -216,8 +215,7 @@ section{position:relative}
     <p class="lead fade d1" data-depth=".12">I'm a video editor who makes aesthetic edits and movie edits, and I'm working toward becoming a Twitch streamer.</p>
     <div class="btns fade d2" data-depth=".08">
       <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
-      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
-      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify profile</a>
+      <a class="btn" href="https://www.tiktok.com/@nishant.aep?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.200a3.600 3.600 0 1 1-3.600-3.600"/><path d="M14 3c.3 2.500 1.900 4.200 4.500 4.400"/></svg>TikTok</a>
     </div>
   </section>
 
@@ -225,20 +223,20 @@ section{position:relative}
     <span class="ghost r" data-depth=".26" aria-hidden="true">ME</span>
     <h2 class="fade" data-depth=".05">About me</h2>
     <div class="about glass panel fade d1">
-      <p>Hi, I'm Nishant.aep, a video editor and a 12th-grade student. Editing started as a hobby, and I want to keep building on it, because it clears my mind and lets me make something I'm proud of.</p>
-      <p>I started out on Alight Motion, and now I edit in Adobe After Effects on my own Acer Nitro V16S laptop. I make aesthetic edits and movie edits, and I used to be a presetmaxxer before I learned what After Effects is.</p>
+      <p>Hi, I'm Nishant.aep, a 16-year-old video editor. Editing started as a hobby, and I want to keep building on it, because it clears my mind and lets me make something I'm proud of.</p>
+      <p>I started out on Alight Motion, and now I edit in Adobe After Effects on my own Acer Nitro V16S laptop. I make aesthetic edits and movie edits.</p>
       <p>Outside of editing, my goal is to become a Twitch streamer. I want to build a community around it and keep editing alongside it.</p>
-      <p>Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or say hi on Discord.</p>
+      <p>Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or find me on TikTok.</p>
     </div>
     <div class="glance">
       <div class="card mini glass fade"><small>I am a</small><b>Video editor</b></div>
-      <div class="card mini glass fade d1"><small>Student</small><b>12th grade</b></div>
+      <div class="card mini glass fade d1"><small>Age</small><b>16</b></div>
       <div class="card mini glass fade d2"><small>Future goal</small><b>Twitch streamer</b></div>
       <div class="card mini glass fade d3"><small>Main tool</small><b>Adobe After Effects</b></div>
       <div class="card mini glass fade"><small>Where I started</small><b>Alight Motion</b></div>
       <div class="card mini glass fade d1"><small>My gear</small><b>Acer Nitro V16S</b></div>
       <div class="card mini glass fade d2"><small>My niche</small><b>Aesthetic and movie edits</b></div>
-      <div class="card mini glass fade d3"><small>Fun fact</small><b>Former presetmaxxer</b></div>
+      <div class="card mini glass fade d3"><small>Fun fact</small><b>I used to presetmax when I started After Effects</b></div>
     </div>
   </section>
 
@@ -246,7 +244,6 @@ section{position:relative}
     <h2 class="fade" data-depth=".05">My editing journey</h2>
     <div class="track">
       <div class="clip fade fl"><h3>Alight Motion</h3><p>This is where I started. I learned the basics of keyframes, timing, and transitions on my phone.</p></div>
-      <div class="clip fade fl d1"><h3>Preset era</h3><p>I was a presetmaxxer for a while. After that, I learned what After Effects is.</p></div>
       <div class="clip fade fl d2"><h3>After Effects</h3><p>I moved to After Effects and now edit on my own Acer Nitro V16S laptop, which gives me the power for heavier projects.</p></div>
     </div>
   </section>
@@ -287,9 +284,7 @@ section{position:relative}
     <h2 class="fade" data-depth=".05">Let's connect</h2>
     <div class="btns fade d1">
       <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
-      <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
-      <a class="btn" href="https://open.spotify.com/user/31feoggt7tjiqzf7pa2vuspudg6q?si=b938ad7f10164172" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.500 9.200c4.200-1.200 8.800-.9 12.700 1.200M6.200 12.300c3.600-1 7.300-.7 10.500 1M7 15.200c3-.8 6-.5 8.600.9" stroke="#0a0a0a" stroke-width="1.600" fill="none" stroke-linecap="round"/></svg>Spotify profile</a>
-      <button class="btn" id="copy" type="button" title="Copy my Discord username"><span id="copylbl">Copy Discord username</span></button>
+      <a class="btn" href="https://www.tiktok.com/@nishant.aep?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.200a3.600 3.600 0 1 1-3.600-3.600"/><path d="M14 3c.3 2.500 1.900 4.200 4.500 4.400"/></svg>TikTok</a>
     </div>
   </section>
 
@@ -440,11 +435,6 @@ if(!calm){
   })();
 })();
 
-var lbl=$('copylbl');
-$('copy').addEventListener('click',function(){
-  function done(){lbl.textContent='Copied: uncle_1412';setTimeout(function(){lbl.textContent='Copy Discord username'},2200)}
-  if(navigator.clipboard){navigator.clipboard.writeText('uncle_1412').then(done,done)}else{done()}
-});
 $('yr').textContent=new Date().getFullYear();
 </script>
 </body>

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#050505">
+<meta name="theme-color" content="#020202">
 <title>Nishant Mayekar | Video Editor</title>
-<meta name="description" content="Nishant Mayekar is a video editor who makes aesthetic edits and movie edits, and a commerce student who wants to become a business accountant.">
+<meta name="description" content="Nishant Mayekar is a video editor who makes aesthetic edits and movie edits, and an aspiring Twitch streamer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--muted:#a9a9a9;--glass-b:rgba(255,255,255,.18);--blur:26px;--head:'Syne',system-ui,sans-serif;--body:'Instrument Sans',system-ui,-apple-system,sans-serif;
-  --gloss:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.04) 38%,rgba(255,255,255,.06) 62%,rgba(255,255,255,.11))}
+:root{--muted:#a9a9a9;--glass-b:rgba(255,255,255,.13);--blur:26px;--head:'Syne',system-ui,sans-serif;--body:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --gloss:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.015) 38%,rgba(255,255,255,.03) 62%,rgba(255,255,255,.07))}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;background:#050505;-webkit-text-size-adjust:100%}
-body{color:#fff;font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;background:#050505;overflow-x:hidden;touch-action:manipulation}
+html{scroll-behavior:smooth;background:#020202;-webkit-text-size-adjust:100%}
+body{color:#fff;font:400 1.05rem/1.7 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;background:#020202;overflow-x:hidden;touch-action:manipulation}
 body.locked{overflow:hidden}
 a{color:inherit}
 button{font:inherit;color:inherit}
@@ -22,19 +22,19 @@ button{font:inherit;color:inherit}
 
 .glass{position:relative;background:var(--gloss);border:1px solid var(--glass-b);
   -webkit-backdrop-filter:blur(var(--blur)) saturate(150%);backdrop-filter:blur(var(--blur)) saturate(150%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(255,255,255,.07),0 0 40px rgba(255,255,255,.07),0 14px 36px rgba(0,0,0,.5)}
-.glass::before{content:"";position:absolute;left:0;right:0;top:0;height:46%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.13),transparent);pointer-events:none}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.26),inset 0 -1px 0 rgba(255,255,255,.05),0 0 40px rgba(255,255,255,.03),0 16px 40px rgba(0,0,0,.65)}
+.glass::before{content:"";position:absolute;left:0;right:0;top:0;height:46%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent);pointer-events:none}
 
 .bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;
-  background:radial-gradient(55vw 45vh at 15% 6%,rgba(255,255,255,.08),transparent 70%),radial-gradient(50vw 50vh at 92% 40%,rgba(255,255,255,.05),transparent 70%),#050505}
-.orb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 68%);will-change:transform}
+  background:radial-gradient(55vw 45vh at 15% 6%,rgba(255,255,255,.045),transparent 70%),radial-gradient(50vw 50vh at 92% 40%,rgba(255,255,255,.03),transparent 70%),#020202}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 68%);will-change:transform}
 .o1{width:60vmax;height:60vmax;left:-18vmax;top:-14vmax}
 .o2{width:55vmax;height:55vmax;right:-22vmax;top:28vh}
 .o3{width:50vmax;height:50vmax;left:22vw;bottom:-28vmax}
-.lines{position:absolute;left:0;right:0;top:-20%;bottom:-20%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 1px,transparent 1px 96px);
+.lines{position:absolute;left:0;right:0;top:-20%;bottom:-20%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 96px);
   -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 80%);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 80%);will-change:transform}
 #glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:1;opacity:0;
-  background:radial-gradient(circle,rgba(255,255,255,.12),transparent 65%);transition:opacity .6s;will-change:transform}
+  background:radial-gradient(circle,rgba(255,255,255,.08),transparent 65%);transition:opacity .6s;will-change:transform}
 #snow{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:80}
 
 .tl{position:fixed;top:0;left:0;right:0;height:3px;z-index:30}
@@ -72,7 +72,7 @@ p+p{margin-top:14px}
 
 .track{position:relative;padding-left:28px;border-left:2px solid rgba(255,255,255,.18);margin-left:6px}
 .clip{position:relative;padding:0 0 30px}
-.clip::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:#050505;border:2px solid #fff;box-shadow:0 0 12px rgba(255,255,255,.6)}
+.clip::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:#020202;border:2px solid #fff;box-shadow:0 0 12px rgba(255,255,255,.6)}
 .clip h3{font:700 1.25rem/1.2 var(--head)}
 .clip p{color:var(--muted);margin-top:6px;max-width:36rem}
 
@@ -137,7 +137,7 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
 
 /* opening screen */
 .splash{position:fixed;left:0;top:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:22px;text-align:center;cursor:pointer;
-  background:radial-gradient(70vw 60vh at 50% 50%,rgba(255,255,255,.1),transparent 70%),#030303;transition:opacity .9s ease,visibility .9s}
+  background:radial-gradient(70vw 60vh at 50% 50%,rgba(255,255,255,.05),transparent 70%),#010101;transition:opacity .9s ease,visibility .9s}
 .splash.gone{opacity:0;visibility:hidden}
 .splash .box{max-width:560px;padding:46px 30px;border-radius:28px;animation:pulse 4s ease-in-out infinite}
 .splash .box::before,.splash .box::after{content:"";position:absolute;width:26px;height:26px;height:26px;border:2px solid #fff;opacity:.85;background:none;border-radius:0}
@@ -168,10 +168,27 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   .splash .box,.splash h2,.splash .hint{animation:none}
   .btn,nav a,.tilt{transition:none}.btn{translate:none}
 }
+
+/* extra layers */
+.bg::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(0,0,0,.75))}
+.disc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);will-change:transform;animation:drift 14s ease-in-out infinite alternate}
+.dc1{width:220px;height:220px;left:68%;top:12%}
+.dc2{width:120px;height:120px;left:8%;top:58%;animation-duration:11s}
+.dc3{width:320px;height:320px;left:74%;top:68%;animation-duration:17s}
+@keyframes drift{to{translate:18px -28px}}
+section{position:relative}
+.ghost{position:absolute;z-index:-1;left:-2%;top:24px;font:800 clamp(5rem,24vw,15rem)/1 var(--head);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.08);
+  pointer-events:none;white-space:nowrap;user-select:none;-webkit-user-select:none}
+.ghost.r{left:auto;right:-2%}
+.hero .ghost{top:14%}
+.tw{position:relative}
+.tw::before{content:"";position:absolute;left:14px;right:14px;top:12px;bottom:-12px;border-radius:26px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);z-index:-1}
+@media (max-width:700px){.dc1{width:130px;height:130px}.dc2{width:80px;height:80px}.dc3{width:180px;height:180px}.tw::before{left:10px;right:10px}}
 </style>
 </head>
 <body class="locked">
-<div class="bg" aria-hidden="true"><i class="lines" data-od=".12"></i><i class="orb o1" data-od=".25"></i><i class="orb o2" data-od=".45"></i><i class="orb o3" data-od=".7"></i></div>
+<div class="bg" aria-hidden="true"><i class="lines" data-od=".12"></i><i class="orb o1" data-od=".25"></i><i class="orb o2" data-od=".45"></i><i class="orb o3" data-od=".7"></i><i class="disc dc1" data-od=".35"></i><i class="disc dc2" data-od=".55"></i><i class="disc dc3" data-od=".2"></i></div>
 <div id="glow" aria-hidden="true"></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
@@ -193,8 +210,9 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
 
 <main>
   <section class="hero" id="home">
+    <span class="ghost" data-depth=".3" aria-hidden="true">STREAM</span>
     <h1 class="fade" data-depth=".16">Nishant <span>Mayekar</span></h1>
-    <p class="lead fade d1" data-depth=".12">I'm a video editor who makes aesthetic edits and movie edits. I'm also a commerce student who wants to become a business accountant.</p>
+    <p class="lead fade d1" data-depth=".12">I'm a video editor who makes aesthetic edits and movie edits, and I'm working toward becoming a Twitch streamer.</p>
     <div class="btns fade d2" data-depth=".08">
       <a class="btn" href="https://youtube.com/@nishant_ltn?si=ytqAmcUywgepcbC-" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>YouTube</a>
       <a class="btn" href="https://discord.com/users/1420581910547009578" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800zM9.600 15.600V8.400l6.200 3.600-6.200 3.600z"/></svg>Discord</a>
@@ -203,17 +221,18 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   </section>
 
   <section id="about">
+    <span class="ghost r" data-depth=".26" aria-hidden="true">ME</span>
     <h2 class="fade" data-depth=".05">About me</h2>
     <div class="about glass panel fade d1">
       <p>Hi, I'm Nishant Mayekar, a video editor and a 12th-grade student. Editing started as a hobby, and I want to keep building on it, because it clears my mind and lets me make something I'm proud of.</p>
       <p>I started out on Alight Motion, and now I edit in Adobe After Effects on my own Acer Nitro V16S laptop. I make aesthetic edits and movie edits, and I used to be a presetmaxxer before I learned what After Effects is.</p>
-      <p>Outside of editing, I'm studying commerce because I want to become a business accountant. Editing and accounting look very different, but both reward patience, attention to detail, and care for the small things nobody notices at first.</p>
+      <p>Outside of editing, my goal is to become a Twitch streamer. I want to build a community around it and keep editing alongside it.</p>
       <p>Thank you for taking the time to read this. If you like what you see, watch my edits on YouTube or say hi on Discord.</p>
     </div>
     <div class="glance">
       <div class="card mini glass fade"><small>I am a</small><b>Video editor</b></div>
-      <div class="card mini glass fade d1"><small>Studying</small><b>Commerce, 12th grade</b></div>
-      <div class="card mini glass fade d2"><small>Future goals</small><b>Accountant and Twitch streamer</b></div>
+      <div class="card mini glass fade d1"><small>Student</small><b>12th grade</b></div>
+      <div class="card mini glass fade d2"><small>Future goal</small><b>Twitch streamer</b></div>
       <div class="card mini glass fade d3"><small>Main tool</small><b>Adobe After Effects</b></div>
       <div class="card mini glass fade"><small>Where I started</small><b>Alight Motion</b></div>
       <div class="card mini glass fade d1"><small>My gear</small><b>Acer Nitro V16S</b></div>
@@ -232,6 +251,7 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   </section>
 
   <section id="work">
+    <span class="ghost" data-depth=".28" aria-hidden="true">EDITS</span>
     <h2 class="fade" data-depth=".05">What I make</h2>
     <div class="grid">
       <div class="card glass fade"><h3>Aesthetic edits</h3><p>Soft light, smooth motion, and a mood that matches the music. These are edits made to be felt, not just watched.</p></div>
@@ -241,25 +261,24 @@ footer{padding:70px 0 60px;color:var(--muted);font-size:.9rem}
   </section>
 
   <section id="listen">
+    <span class="ghost" data-depth=".26" aria-hidden="true">SOUND</span>
     <h2 class="fade" data-depth=".05">Listen</h2>
     <div class="music glass fade d1">
-      <div class="now"><b id="ttl">&nbsp;</b><small>Pick any track below</small></div>
+      <div class="now"><b id="ttl">&nbsp;</b><small>On repeat</small></div>
       <input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek">
       <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
       <div class="ctl">
-        <button class="ib" id="prev" type="button" aria-label="Previous track"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
         <button class="ib big" id="pp" type="button" aria-label="Play or pause"><svg class="ic1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="ic2" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
-        <button class="ib" id="next" type="button" aria-label="Next track"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5l11 7-11 7z"/></svg></button>
       </div>
-      <ol class="list" id="list"></ol>
     </div>
   </section>
 
   <section id="plans">
+    <span class="ghost r" data-depth=".28" aria-hidden="true">LIVE</span>
     <h2 class="fade" data-depth=".05">Future goals</h2>
     <div class="grid">
-      <div class="card glass fade"><h3>Business accountant</h3><p>I'm pursuing commerce to build a solid career in accounting and business.</p></div>
-      <div class="card glass fade d1"><h3>Twitch streamer</h3><p>I want to start streaming on Twitch and build a community, while I keep editing alongside it.</p></div>
+      <div class="card glass fade"><h3>Twitch streamer</h3><p>I want to start streaming on Twitch and build a community around it.</p></div>
+      <div class="card glass fade d1"><h3>Keep editing</h3><p>Editing stays part of everything I do, from aesthetic edits to movie edits.</p></div>
     </div>
   </section>
 
@@ -303,34 +322,23 @@ var bar=document.getElementById('bar');
 function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%'}
 addEventListener('scroll',upd,{passive:true});upd();
 
-/* audio player with four tracks */
-var T=[{n:'dreamsoda - Good For You x One Of The Girls',s:'audios/track1.mp3'},{n:'The Stranglers - Golden Brown',s:'audios/track2.mp3'},
-       {n:"E-Rotic - Don't Have Sex With Your Ex",s:'audios/track3.mp3'},{n:'\u0420\u0432\u0430\u043d\u044b\u0435 \u0434\u0436\u0438\u043d\u0441\u044b (Remix)',s:'audios/track4.mp3'}],
-    au=new Audio(),ci=0,$=function(i){return document.getElementById(i)},seek=$('seek'),list=$('list');
-au.preload='auto';
-list.innerHTML=T.map(function(t,i){return '<li><button class="tr" type="button" data-i="'+i+'"><span class="no">'+(i+1)+'</span><span class="nm">'+t.n+'</span><span class="eq"><i></i><i></i><i></i></span></button></li>'}).join('');
+/* one track, on repeat */
+var NAME='dreamsoda - Good For You x One Of The Girls',au=new Audio('audios/track1.mp3'),
+    $=function(i){return document.getElementById(i)},seek=$('seek');
+au.preload='auto';au.loop=true;$('ttl').textContent=NAME;
 function fmt(x){if(!isFinite(x))return '0:00';return Math.floor(x/60)+':'+('0'+Math.floor(x%60)).slice(-2)}
-function load(i,play){
-  ci=(i+T.length)%T.length;au.src=T[ci].s;$('ttl').textContent=T[ci].n;
-  [].forEach.call(list.querySelectorAll('.tr'),function(b,k){b.classList.toggle('on',k===ci)});
-  if('mediaSession' in navigator&&window.MediaMetadata){navigator.mediaSession.metadata=new MediaMetadata({title:T[ci].n,artist:'Nishant Mayekar'})}
-  if(play){var p=au.play();if(p&&p.catch)p.catch(function(){})}
-}
 function toggle(){if(au.paused){var p=au.play();if(p&&p.catch)p.catch(function(){})}else{au.pause()}}
 au.addEventListener('play',function(){B.classList.add('playing')});
 au.addEventListener('pause',function(){B.classList.remove('playing')});
-au.addEventListener('ended',function(){load(ci+1,true)});
 au.addEventListener('loadedmetadata',function(){$('dur').textContent=fmt(au.duration)});
 au.addEventListener('timeupdate',function(){
   var r=au.duration?au.currentTime/au.duration:0;seek.value=r*1000;seek.style.setProperty('--p',(r*100)+'%');$('cur').textContent=fmt(au.currentTime)});
 seek.addEventListener('input',function(){if(au.duration)au.currentTime=seek.value/1000*au.duration});
-list.addEventListener('click',function(e){var b=e.target.closest('.tr');if(b)load(+b.dataset.i,true)});
-$('pp').onclick=$('snd').onclick=toggle;$('prev').onclick=function(){load(ci-1,true)};$('next').onclick=function(){load(ci+1,true)};
+$('pp').onclick=$('snd').onclick=toggle;
 if('mediaSession' in navigator){
+  if(window.MediaMetadata)navigator.mediaSession.metadata=new MediaMetadata({title:NAME,artist:'Nishant Mayekar'});
   navigator.mediaSession.setActionHandler('play',toggle);navigator.mediaSession.setActionHandler('pause',toggle);
-  navigator.mediaSession.setActionHandler('previoustrack',function(){load(ci-1,true)});navigator.mediaSession.setActionHandler('nexttrack',function(){load(ci+1,true)});
 }
-load(0,false);
 
 /* tap anywhere to enter; the tap lets the browser play audio */
 var sp=$('splash'),entered=false;
@@ -394,7 +402,7 @@ if(!calm){
   if(calm)return;
   var cv=$('snow'),cx=cv.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,coarse?1.5:2),fl=[];
   function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
-  function mk(top){var z=.4+Math.random()*1.2;return{x:Math.random()*W,y:top?-10:Math.random()*H,z:z,r:z*1.3,v:.12+z*.28,s:Math.random()*6.28,w:.25+Math.random()*.6,a:Math.min(.6,.15+z*.25)}}
+  function mk(top){var z=.4+Math.random()*1.2;return{x:Math.random()*W,y:top?-10:Math.random()*H,z:z,r:z*1.3,v:.12+z*.28,s:Math.random()*6.28,w:.25+Math.random()*.6,a:Math.min(.5,.12+z*.22)}}
   size();addEventListener('resize',size);
   var n=coarse?20:Math.round(Math.min(48,Math.max(24,W/30)));
   for(var i=0;i<n;i++)fl.push(mk(false));
